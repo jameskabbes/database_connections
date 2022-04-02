@@ -1,19 +1,10 @@
-if __name__ == '__main__':
-    import user_profile_import
-    user_profile = user_profile_import.init()
-
 import sqlite3
-import sql_support_functions as ssf
-import pandas as pd
-from dir_ops import Path
-
-from DatabaseConnection import DatabaseConnection
+from database_connections.DatabaseConnection import DatabaseConnection
 
 def get_DatabaseConnection( **kwargs ):
 
     '''returns the class instance of the said object'''
     return SQLite( **kwargs )
-
 
 class SQLite( DatabaseConnection ):
 
@@ -75,18 +66,3 @@ class SQLite( DatabaseConnection ):
 
         return string
 
-
-if __name__ == '__main__':
-
-    db_path = 'test.db'
-    conn_inst = SQLite( db_path = db_path )
-
-    #Write to db
-    df = pd.DataFrame( {'X':list(range(100)), 'Y':list(range(100))} )
-    conn_inst.write( df, 'test' )
-
-    # Read from db
-    df = conn_inst.query( query_string = 'Select X FROM test WHERE X < 50' )
-    print (df)
-
-    conn_inst.exit()

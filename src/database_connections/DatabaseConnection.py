@@ -1,14 +1,10 @@
-import dir_ops as do
-from dir_ops import Path
-from dir_ops import Dir
-
-import sql_support_functions as ssf
-import py_starter as ps
+from parent_class import ParentClass
+import dir_ops.dir_ops as do
+import py_starter.py_starter as ps
 
 import pandas as pd
-import ParentClass
 
-class DatabaseConnection( ParentClass.ParentClass ):
+class DatabaseConnection( ParentClass ):
 
     '''extra keyword agrugments will be set according to each SQL service's requirements
     This class should only be used as a parent class for other specific sql services
@@ -16,7 +12,7 @@ class DatabaseConnection( ParentClass.ParentClass ):
 
     def __init__(self, **kwargs):
 
-        ParentClass.ParentClass.__init__( self )
+        ParentClass.__init__( self )
         self.set_atts( kwargs )
 
         if len(kwargs) != 0: #if the user passed arguments, initialze
@@ -45,13 +41,13 @@ class DatabaseConnection( ParentClass.ParentClass ):
 
         return self.print_string( all_atts, print_off = print_off )
 
-    def print_imp_atts( self, print_off = True ):
+    def print_imp_atts( self, **kwargs ):
 
-        return self._print_imp_atts_helper( atts = ['type','conn'], print_off = print_off )
+        return self._print_imp_atts_helper( atts = ['type','conn'], **kwargs )
 
-    def print_one_line_atts( self, print_off = True, leading_string = '\t' ):
+    def print_one_line_atts( self, **kwargs ):
 
-        return self._print_one_line_atts_helper( atts = ['type','conn'], print_off = print_off, leading_string = leading_string )
+        return self._print_one_line_atts_helper( atts = ['type','conn'], **kwargs )
 
     def exit( self ):
 

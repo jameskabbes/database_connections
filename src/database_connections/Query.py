@@ -1,22 +1,14 @@
-if __name__ == '__main__':
-    import user_profile_import
-    user_profile = user_profile_import.init()
-
-import os
-import sys
-
-import dir_ops as do
-from dir_ops import Path
-from dir_ops import Dir
-import sql_support_functions as ssf
-import py_starter as ps
-import ParentClass
+import py_starter.py_starter as ps
+import dir_ops.dir_ops as do
+import database_connections.sql_support_functions as ssf
+from parent_class import ParentClass
+import os 
 
 default_query_filename = 'query.sql'
 default_export_suffix = '_export'
 default_export_extension = '.csv'
 
-class Query( ParentClass.ParentClass ):
+class Query( ParentClass ):
 
     '''
     A Python class for SQL Queries
@@ -25,10 +17,10 @@ class Query( ParentClass.ParentClass ):
 
     def __init__( self, string = '', query_path = '', export_path = '', engine = 'teradata', query_Path = None, export_Path = None, conn_inst = None, **connection_module_params):
 
-        ParentClass.ParentClass.__init__( self )
+        ParentClass.__init__( self )
 
         ### make sure there is at least something to make a query
-        if string == '' and query_path == '' and not Path.is_Path(query_Path):
+        if string == '' and query_path == '' and not do.Path.is_Path(query_Path):
             print ('Not enough info to make a Query Class')
             exit()
 
@@ -36,11 +28,11 @@ class Query( ParentClass.ParentClass ):
         if string != '':
             self.string = string
 
-            if not Path.is_Path( query_Path ):
+            if not do.Path.is_Path( query_Path ):
                 if query_path != '':
-                    self.query_Path = Path( os.path.abspath(query_path))
+                    self.query_Path = do.Path( os.path.abspath(query_path))
                 else:
-                    self.query_Path = Path ( Dir(do.get_cwd()).join( default_query_filename ))
+                    self.query_Path = do.Path ( do.Dir(do.get_cwd()).join( default_query_filename ))
                     self.get_unique_query_Path()
 
             else:
@@ -48,19 +40,19 @@ class Query( ParentClass.ParentClass ):
 
         ### if no string is provided, read the contents of the .sql path
         else:
-            if not Path.is_Path( query_Path ):
-                self.query_Path = Path( os.path.abspath(query_path))
+            if not do.Path.is_Path( query_Path ):
+                self.query_Path = do.Path( os.path.abspath(query_path))
             else:
                 self.query_Path = query_Path
 
             self.read_string_from_path()
 
         ### if no export_Path is given, make your own
-        if not Path.is_Path( export_Path ):
+        if not do.Path.is_Path( export_Path ):
             if export_path != '':
-                self.export_Path = Path( os.path.abspath(export_path) )
+                self.export_Path = do.Path( os.path.abspath(export_path) )
             else:
-                self.export_Path = Path ( Dir(self.query_Path.ascend()).join( self.query_Path.root + default_export_suffix + default_export_extension  ) )
+                self.export_Path = do.Path ( do.Dir(self.query_Path.ascend()).join( self.query_Path.root + default_export_suffix + default_export_extension  ) )
                 self.get_unique_export_Path()
         else:
             self.export_Path = export_Path
@@ -142,36 +134,5 @@ class Query( ParentClass.ParentClass ):
             self.df.to_parquet( self.export_Path.p, **kwargs )
 
         else:
-            print ('No directions for exporting file with ending: ' + str(export_Path.ending))
+            print ('No directions for exporting file with ending: ' + str(self.export_Path.ending))
 
-
-if __name__ == '__main__':
-
-    '''An example for how to interact with the Query Class'''
-
-    import sql_support_functions as ssf
-    import dir_ops as do
-    from dir_ops import Path
-    from dir_ops import Dir
-
-    query_string = '''
-    SELECT
-    CD_SPT_TYPE
-    , COUNT(CD_SPT_TYPE)
-    FROM P_EDW_PUB_V.CSS_SERVICE_PT
-    WHERE CD_SPT_STAT = '02'
-    GROUP BY CD_SPT_TYPE;
-    '''
-
-    ### Initialize the query
-    query_inst = Query( string = query_string, engine = 'teradata', **user_profile.teradata_default_params )
-
-    ### save the query stirng ot a text file
-    query_inst.save()
-
-    ### execute the query
-    query_inst.execute()
-    print (query_inst.df)
-
-    ### export the dataframe
-    query_inst.export()

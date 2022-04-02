@@ -1,5 +1,5 @@
 import datetime
-import TJEncryptPassword as tj_enc
+import database_connections.TJEncryptPassword as tj_enc
 
 def custom_decrypt( sPassKeyFileName, sEncPassFileName ):
 
@@ -57,11 +57,9 @@ def custom_encrypt( ameren_password, passkey_path, encpass_path ):
 
 if __name__ == '__main__':
 
-    import user_profile_import
-    user_profile = user_profile_import.init()
+    import user_profile
+    import py_starter.py_starter as ps
 
     ###
-    import py_starter as ps
-
-    ameren_password = ps.get_secret_input( prompt = 'Enter your current Ameren password: ' )
-    custom_encrypt( ameren_password, user_profile.encrypted_password_info['passkey_path'], user_profile.encrypted_password_info['encpass_path']  )
+    ameren_password = ps.get_secret_input( prompt = 'Enter your current password: ' )
+    custom_encrypt( ameren_password, user_profile.profile.encrypted_password_info['passkey_path'], user_profile.profile.encrypted_password_info['encpass_path']  )

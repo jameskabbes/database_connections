@@ -1,11 +1,9 @@
-import dir_ops as do
-from dir_ops import Path
-from dir_ops import Dir
-import py_starter as ps
+import dir_ops.dir_ops as do
+import py_starter.py_starter as ps
 import os
-import Query
+import database_connections.Query as Query
 
-script_Path = Path( os.path.abspath(__file__) )
+script_Path = do.Path( os.path.abspath(__file__) )
 sql_Dir = script_Path.ascend() 
 
 def get_DatabaseConnection( connection_module = 'teradata', **kwargs ):
@@ -37,7 +35,7 @@ def run_queries_in_folder( queries_Dir, export_Dir, engine = 'teradata', export_
     sql_Paths = queries_Dir.list_contents_Paths( block_dirs = True )
 
     if conn_inst == None:
-        conn_inst = import_connection_object( connection_module = engine, **connection_module_params )
+        conn_inst = get_DatabaseConnection( connection_module = engine, **connection_module_params )
     conn_inst.init()
 
     ### only select queries which have correct endings
@@ -56,7 +54,7 @@ def run_queries_in_folder( queries_Dir, export_Dir, engine = 'teradata', export_
     ### Execute the queries
     for i in inds_to_run:
         sql_Path = sql_Paths[i]
-        export_Path = Path( export_Dir.join( sql_Path.root + '.' + export_type ) )
+        export_Path = do.Path( export_Dir.join( sql_Path.root + '.' + export_type ) )
 
         export_kwargs = {}
         if export_Path.ending == 'parquet':

@@ -1,15 +1,7 @@
-if __name__ == '__main__':
-    import user_profile_import
-    user_profile = user_profile_import.init()
-
-import sys
-import os
 import pyathena
 import pandas as pd
-import sql_support_functions as ssf
-import boto3_funcs as b3f
+from database_connections.DatabaseConnection import DatabaseConnection
 
-from DatabaseConnection import DatabaseConnection
 
 def get_DatabaseConnection( **kwargs ):
 

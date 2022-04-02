@@ -1,12 +1,6 @@
-if __name__ == '__main__':
-    import user_profile_import
-    user_profile = user_profile_import.init()
-
 import sqlalchemy
-import psycopg2
-import pandas as pd
-import py_starter as ps
-from DatabaseConnection import DatabaseConnection
+import py_starter.py_starter as ps
+from database_connections.DatabaseConnection import DatabaseConnection
 
 def get_DatabaseConnection( **kwargs ):
 
@@ -17,7 +11,7 @@ class Redshift( DatabaseConnection ):
 
     '''To run the SQLite module, you need to set the following attributes:
 
-    engine = 'postgresql+psycopg2://dfg_analtyics...'
+    engine = 'engine code'
     schema = 'dfg_analytics'
 
     '''
@@ -39,9 +33,9 @@ class Redshift( DatabaseConnection ):
     def write(self, df, table_name, **kwargs):
 
         default_kwargs = {'schema': self.schema, 'if_exists': 'replace', 'index': False, 'method': 'multi'}
-        kwargs = ps.replace_default_kwargs( default_kwargs, **kwargs )
+        joined_kwargs = ps.merge_dicts( default_kwargs, kwargs )
 
-        df.to_sql( table_name, self.conn, **kwargs )
+        df.to_sql( table_name, self.conn, **joined_kwargs )
 
     def create_generic_select( self, table_name, top = None ):
 

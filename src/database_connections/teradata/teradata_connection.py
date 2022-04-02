@@ -1,14 +1,8 @@
-if __name__ == '__main__':
-    import user_profile_import
-    user_profile = user_profile_import.init()
-
 import teradatasql
 import pandas as pd
-import sql_support_functions as ssf
-import sys
-import py_starter as ps
+import py_starter.py_starter as ps
 
-from DatabaseConnection import DatabaseConnection
+from database_connections.DatabaseConnection import DatabaseConnection
 
 def get_DatabaseConnection( **kwargs ):
 
@@ -43,9 +37,9 @@ class Teradata( DatabaseConnection ):
         'logmech' : 'LDAP',
         'log' : 8
         }
-        kwargs = ps.replace_default_kwargs( default_kwargs, **kwargs )
+        joined_kwargs = ps.merge_dicts( default_kwargs, kwargs )
 
-        self.conn = teradatasql.connect( host = self.host, user = self.username, password = self.sPassword, **kwargs )
+        self.conn = teradatasql.connect( host = self.host, user = self.username, password = self.sPassword, **joined_kwargs )
 
     def get_password( self ):
 
@@ -76,10 +70,3 @@ class Teradata( DatabaseConnection ):
         string += ' * FROM ' + table_name
         return string
 
-
-if __name__ == '__main__':
-
-    conn_inst = Teradata( **user_profile.teradata_default_params )
-
-    df = conn_inst.query( query_file = 'test_query.sql' )
-    print (df)

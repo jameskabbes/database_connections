@@ -1,15 +1,6 @@
-if __name__ == '__main__':
-    import user_profile_import
-    user_profile = user_profile_import.init()
-
-import sys
-import os
 import cx_Oracle
-import pandas as pd
-import password_encryption
-import sql_support_functions as ssf
-
-from DatabaseConnection import DatabaseConnection
+from database_connections import password_encryption
+from database_connections.DatabaseConnection import DatabaseConnection
 
 def get_DatabaseConnection( **kwargs ):
 
