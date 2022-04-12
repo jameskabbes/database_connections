@@ -1,18 +1,19 @@
 import datetime
 import database_connections.TJEncryptPassword as tj_enc
 
+
 def custom_decrypt( sPassKeyFileName, sEncPassFileName ):
 
     return tj_enc.decryptPassword( sPassKeyFileName, sEncPassFileName )
 
-def custom_encrypt( ameren_password, passkey_path, encpass_path ):
+def custom_encrypt( raw_password, passkey_path, encpass_path ):
 
     sTransformation = 'AES/CBC/NoPadding'
     sKeySizeInBits = '256'
     sMac = 'HmacSHA1'
     sPassKeyFileName = passkey_path
     sEncPassFileName = encpass_path
-    sPassword = ameren_password
+    sPassword = raw_password
 
     asTransformationParts = sTransformation.split ("/")
     if len (asTransformationParts) != 3:
@@ -58,8 +59,7 @@ def custom_encrypt( ameren_password, passkey_path, encpass_path ):
 if __name__ == '__main__':
 
     import user_profile
-    import py_starter.py_starter as ps
+    import py_starter as ps
 
-    ###
-    ameren_password = ps.get_secret_input( prompt = 'Enter your current password: ' )
-    custom_encrypt( ameren_password, user_profile.profile.encrypted_password_info['passkey_path'], user_profile.profile.encrypted_password_info['encpass_path']  )
+    raw_password = ps.get_secret_input( prompt = 'Enter your current password: ' )
+    custom_encrypt( raw_password, user_profile.profile.encrypted_password_info['passkey_path'], user_profile.profile.encrypted_password_info['encpass_path']  )

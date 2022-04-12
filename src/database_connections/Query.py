@@ -1,5 +1,6 @@
-import py_starter.py_starter as ps
-import dir_ops.dir_ops as do
+import py_starter as ps
+import dir_ops as do
+import database_connections
 import database_connections.sql_support_functions as ssf
 from parent_class import ParentClass
 import os 
@@ -32,7 +33,7 @@ class Query( ParentClass ):
                 if query_path != '':
                     self.query_Path = do.Path( os.path.abspath(query_path))
                 else:
-                    self.query_Path = do.Path ( do.Dir(do.get_cwd()).join( default_query_filename ))
+                    self.query_Path = do.Path ( database_connections._cwd_Dir.join( default_query_filename ))
                     self.get_unique_query_Path()
 
             else:
@@ -52,7 +53,7 @@ class Query( ParentClass ):
             if export_path != '':
                 self.export_Path = do.Path( os.path.abspath(export_path) )
             else:
-                self.export_Path = do.Path ( do.Dir(self.query_Path.ascend()).join( self.query_Path.root + default_export_suffix + default_export_extension  ) )
+                self.export_Path = do.Path ( self.query_Path.ascend().join( self.query_Path.root + default_export_suffix + default_export_extension  ) )
                 self.get_unique_export_Path()
         else:
             self.export_Path = export_Path
