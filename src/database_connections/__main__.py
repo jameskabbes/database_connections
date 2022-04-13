@@ -1,8 +1,4 @@
-import sys
-sys_args = sys.argv[1:]
+import database_connections
 
-def run( *sys_args ):
-    print ('Running main for database_connections')
-
-run( *sys_args )
-
+Obj = database_connections.Query( string = 'TEST QUERY STRING' )
+Obj.print_atts()

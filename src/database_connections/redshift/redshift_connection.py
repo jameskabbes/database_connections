@@ -1,5 +1,5 @@
 import sqlalchemy
-import py_starter.py_starter as ps
+import py_starter as ps
 from database_connections.DatabaseConnection import DatabaseConnection
 
 def get_DatabaseConnection( **kwargs ):

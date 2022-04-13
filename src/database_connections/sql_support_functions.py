@@ -1,5 +1,5 @@
-import dir_ops.dir_ops as do
-import py_starter.py_starter as ps
+import dir_ops as do
+import py_starter as ps
 import os
 import database_connections.Query as Query
 

@@ -13,7 +13,7 @@ class Databricks( DatabaseConnection ):
     server_hostname
     http_path
     access_token
-    schema
+    port
 
     '''
 
@@ -30,8 +30,8 @@ class Databricks( DatabaseConnection ):
     def get_conn( self, **kwargs ):
 
         self.conn = sqlalchemy.create_engine(
-            "databricks+connector://token:{access_token}@{server_hostname}:443/{schema}".format(
-                access_token = self.access_token, server_hostname = self.server_hostname, schema = self.schema ),
+            "databricks+connector://token:{access_token}@{server_hostname}:443/{port}".format(
+                access_token = self.access_token, server_hostname = self.server_hostname, port = self.port ),
             connect_args={"http_path": self.http_path}
         )
 
