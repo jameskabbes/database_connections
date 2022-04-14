@@ -7,4 +7,5 @@ teradatasql
 pandas
 pysqlite3
 sqlalchemy
+databricks-sql-connector
 cx-Oracle

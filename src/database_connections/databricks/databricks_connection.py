@@ -1,4 +1,5 @@
-import sqlalchemy
+from databricks import sql #from pypi package: databricks-sql-connector
+import py_starter as ps
 from database_connections.DatabaseConnection import DatabaseConnection
 
 def get_DatabaseConnection( **kwargs ):
@@ -13,8 +14,6 @@ class Databricks( DatabaseConnection ):
     server_hostname
     http_path
     access_token
-    port
-
     '''
 
     def __init__( self, **kwargs ):
@@ -29,11 +28,17 @@ class Databricks( DatabaseConnection ):
 
     def get_conn( self, **kwargs ):
 
-        self.conn = sqlalchemy.create_engine(
-            "databricks+connector://token:{access_token}@{server_hostname}:443/{port}".format(
-                access_token = self.access_token, server_hostname = self.server_hostname, port = self.port ),
-            connect_args={"http_path": self.http_path}
-        )
+        default_kwargs = {
+            'server_hostname': self.server_hostname,
+            'http_path': self.http_path,
+            'access_token': self.access_token
+        }
+
+        joined_kwargs = ps.merge_dicts( default_kwargs, kwargs )
+
+        self.conn = sql.connect( **joined_kwargs )
+
+
 
 
 
