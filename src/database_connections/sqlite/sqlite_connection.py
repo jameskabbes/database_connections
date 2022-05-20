@@ -20,16 +20,12 @@ class SQLite( DatabaseConnection ):
 
     def exit( self ):
 
-        '''close the connection'''
-
         self.close_conn()
 
-    def get_conn( self ):
-
-        '''get the connection'''
+    def get_conn( self, **kwargs ):
 
         try:
-            conn = sqlite3.connect( self.db_path )
+            conn = sqlite3.connect( self.db_path, **kwargs )
 
         except:
             print ('Could not connect to SQLite Database: ' + str(self.db_path))
