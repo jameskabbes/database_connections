@@ -16,7 +16,7 @@ class Query( ParentClass ):
     Query class is agnostic of engine
     '''
 
-    def __init__( self, string = '', query_path = '', export_path = '', engine = 'teradata', query_Path = None, export_Path = None, conn_inst = None, **connection_module_params):
+    def __init__( self, string = '', query_path = '', export_path = '', engine = 'sqlite', query_Path = None, export_Path = None, conn_inst = None, **connection_module_params):
 
         ParentClass.__init__( self )
 
