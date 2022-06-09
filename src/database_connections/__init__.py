@@ -3,6 +3,7 @@ from . import password_encryption
 from .Query import Query
 from .DatabaseConnection import DatabaseConnection
 from . import sql_support_functions
+from . import Connections
 
 import dir_ops as do
 import os
