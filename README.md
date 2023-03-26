@@ -1,8 +1,8 @@
-[GitHub Pages](https://jameskabbes.github.io/database_connections)<br>
-[PyPI](https://pypi.org/project/kabbes-database-connections)
-
 # database_connections
 Provides database-agnostic connection tools
+
+[Documentation](https://jameskabbes.github.io/database_connections)<br>
+[PyPI](https://pypi.org/project/kabbes-database-connections)
 
 <br> 
 
