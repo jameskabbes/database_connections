@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>database_connections package &mdash; kabbes_database_connections 0.7.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="database_connections.Connections package" href="database_connections.Connections.html" />
+    <link rel="prev" title="src" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            kabbes_database_connections
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">database_connections package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html">database_connections.Connections package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-database_connections.DatabaseConnection">database_connections.DatabaseConnection module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.DatabaseConnection.DatabaseConnection"><code class="docutils literal notranslate"><span class="pre">DatabaseConnection</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-database_connections.Query">database_connections.Query module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.Query.Query"><code class="docutils literal notranslate"><span class="pre">Query</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-database_connections.TJEncryptPassword">database_connections.TJEncryptPassword module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.TJEncryptPassword.createEncryptedPasswordFile"><code class="docutils literal notranslate"><span class="pre">createEncryptedPasswordFile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.TJEncryptPassword.createPasswordEncryptionKeyFile"><code class="docutils literal notranslate"><span class="pre">createPasswordEncryptionKeyFile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.TJEncryptPassword.decryptPassword"><code class="docutils literal notranslate"><span class="pre">decryptPassword()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.TJEncryptPassword.j2p"><code class="docutils literal notranslate"><span class="pre">j2p()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.TJEncryptPassword.loadPropertiesFile"><code class="docutils literal notranslate"><span class="pre">loadPropertiesFile()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-database_connections.password_encryption">database_connections.password_encryption module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.password_encryption.custom_decrypt"><code class="docutils literal notranslate"><span class="pre">custom_decrypt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.password_encryption.custom_encrypt"><code class="docutils literal notranslate"><span class="pre">custom_encrypt()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-database_connections.sql_support_functions">database_connections.sql_support_functions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.sql_support_functions.get_DatabaseConnection"><code class="docutils literal notranslate"><span class="pre">get_DatabaseConnection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.sql_support_functions.list_to_string"><code class="docutils literal notranslate"><span class="pre">list_to_string()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#database_connections.sql_support_functions.run_queries_in_folder"><code class="docutils literal notranslate"><span class="pre">run_queries_in_folder()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-database_connections">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">kabbes_database_connections</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">database_connections package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/database_connections.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="database-connections-package">
+<h1>database_connections package<a class="headerlink" href="#database-connections-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="database_connections.Connections.html">database_connections.Connections package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="database_connections.Connections.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database_connections.Connections.html#module-database_connections.Connections.athena">database_connections.Connections.athena module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.athena.Athena"><code class="docutils literal notranslate"><span class="pre">Athena</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.athena.Athena.get_conn"><code class="docutils literal notranslate"><span class="pre">Athena.get_conn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.athena.Athena.write"><code class="docutils literal notranslate"><span class="pre">Athena.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.athena.get_DatabaseConnection"><code class="docutils literal notranslate"><span class="pre">get_DatabaseConnection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database_connections.Connections.html#module-database_connections.Connections.databricks">database_connections.Connections.databricks module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.databricks.Databricks"><code class="docutils literal notranslate"><span class="pre">Databricks</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.databricks.Databricks.get_conn"><code class="docutils literal notranslate"><span class="pre">Databricks.get_conn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.databricks.Databricks.init"><code class="docutils literal notranslate"><span class="pre">Databricks.init()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.databricks.get_DatabaseConnection"><code class="docutils literal notranslate"><span class="pre">get_DatabaseConnection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database_connections.Connections.html#module-database_connections.Connections.oracle">database_connections.Connections.oracle module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.oracle.Oracle"><code class="docutils literal notranslate"><span class="pre">Oracle</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.oracle.Oracle.create_generic_select"><code class="docutils literal notranslate"><span class="pre">Oracle.create_generic_select()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.oracle.Oracle.get_all_tables"><code class="docutils literal notranslate"><span class="pre">Oracle.get_all_tables()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.oracle.Oracle.get_conn"><code class="docutils literal notranslate"><span class="pre">Oracle.get_conn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.oracle.Oracle.get_dsn"><code class="docutils literal notranslate"><span class="pre">Oracle.get_dsn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.oracle.Oracle.get_password"><code class="docutils literal notranslate"><span class="pre">Oracle.get_password()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.oracle.Oracle.init"><code class="docutils literal notranslate"><span class="pre">Oracle.init()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.oracle.get_DatabaseConnection"><code class="docutils literal notranslate"><span class="pre">get_DatabaseConnection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database_connections.Connections.html#module-database_connections.Connections.redshift">database_connections.Connections.redshift module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.redshift.Redshift"><code class="docutils literal notranslate"><span class="pre">Redshift</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.redshift.Redshift.create_generic_select"><code class="docutils literal notranslate"><span class="pre">Redshift.create_generic_select()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.redshift.Redshift.get_all_tables"><code class="docutils literal notranslate"><span class="pre">Redshift.get_all_tables()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.redshift.Redshift.get_conn"><code class="docutils literal notranslate"><span class="pre">Redshift.get_conn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.redshift.Redshift.init"><code class="docutils literal notranslate"><span class="pre">Redshift.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.redshift.Redshift.write"><code class="docutils literal notranslate"><span class="pre">Redshift.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.redshift.get_DatabaseConnection"><code class="docutils literal notranslate"><span class="pre">get_DatabaseConnection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database_connections.Connections.html#module-database_connections.Connections.sqlite">database_connections.Connections.sqlite module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.sqlite.SQLite"><code class="docutils literal notranslate"><span class="pre">SQLite</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.sqlite.SQLite.close_conn"><code class="docutils literal notranslate"><span class="pre">SQLite.close_conn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.sqlite.SQLite.create_generic_select"><code class="docutils literal notranslate"><span class="pre">SQLite.create_generic_select()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.sqlite.SQLite.exit"><code class="docutils literal notranslate"><span class="pre">SQLite.exit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.sqlite.SQLite.get_all_tables"><code class="docutils literal notranslate"><span class="pre">SQLite.get_all_tables()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.sqlite.SQLite.get_conn"><code class="docutils literal notranslate"><span class="pre">SQLite.get_conn()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.sqlite.get_DatabaseConnection"><code class="docutils literal notranslate"><span class="pre">get_DatabaseConnection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database_connections.Connections.html#module-database_connections.Connections.teradata">database_connections.Connections.teradata module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.teradata.Teradata"><code class="docutils literal notranslate"><span class="pre">Teradata</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.teradata.Teradata.create_generic_select"><code class="docutils literal notranslate"><span class="pre">Teradata.create_generic_select()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.teradata.Teradata.get_conn"><code class="docutils literal notranslate"><span class="pre">Teradata.get_conn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.teradata.Teradata.get_password"><code class="docutils literal notranslate"><span class="pre">Teradata.get_password()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.teradata.Teradata.init"><code class="docutils literal notranslate"><span class="pre">Teradata.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.teradata.Teradata.query"><code class="docutils literal notranslate"><span class="pre">Teradata.query()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.Connections.html#database_connections.Connections.teradata.get_DatabaseConnection"><code class="docutils literal notranslate"><span class="pre">get_DatabaseConnection()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="database_connections.Connections.html#module-database_connections.Connections">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-database_connections.DatabaseConnection">
+<span id="database-connections-databaseconnection-module"></span><h2>database_connections.DatabaseConnection module<a class="headerlink" href="#module-database_connections.DatabaseConnection" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database_connections.DatabaseConnection.DatabaseConnection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database_connections.DatabaseConnection.</span></span><span class="sig-name descname"><span class="pre">DatabaseConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/DatabaseConnection.html#DatabaseConnection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.DatabaseConnection.DatabaseConnection" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ParentClass</span></code></p>
+<p>extra keyword agrugments will be set according to each SQL service’s requirements
+This class should only be used as a parent class for other specific sql services</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.DatabaseConnection.DatabaseConnection.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/DatabaseConnection.html#DatabaseConnection.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.DatabaseConnection.DatabaseConnection.execute" title="Permalink to this definition"></a></dt>
+<dd><p>execute the given string</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.DatabaseConnection.DatabaseConnection.exit">
+<span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/DatabaseConnection.html#DatabaseConnection.exit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.DatabaseConnection.DatabaseConnection.exit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.DatabaseConnection.DatabaseConnection.get_cursor">
+<span class="sig-name descname"><span class="pre">get_cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/DatabaseConnection.html#DatabaseConnection.get_cursor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.DatabaseConnection.DatabaseConnection.get_cursor" title="Permalink to this definition"></a></dt>
+<dd><p>get the cursor from the connection</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.DatabaseConnection.DatabaseConnection.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/DatabaseConnection.html#DatabaseConnection.init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.DatabaseConnection.DatabaseConnection.init" title="Permalink to this definition"></a></dt>
+<dd><p>sets attributes, gets connection, and prints attributes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.DatabaseConnection.DatabaseConnection.print_all_atts">
+<span class="sig-name descname"><span class="pre">print_all_atts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">print_off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/DatabaseConnection.html#DatabaseConnection.print_all_atts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.DatabaseConnection.DatabaseConnection.print_all_atts" title="Permalink to this definition"></a></dt>
+<dd><p>Print off all Class instance attributes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.DatabaseConnection.DatabaseConnection.print_imp_atts">
+<span class="sig-name descname"><span class="pre">print_imp_atts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/DatabaseConnection.html#DatabaseConnection.print_imp_atts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.DatabaseConnection.DatabaseConnection.print_imp_atts" title="Permalink to this definition"></a></dt>
+<dd><p>Prints off (or returns a string) with the ‘important’ information about a class
+Most child classes will redefine this method with custom attributes to print off</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.DatabaseConnection.DatabaseConnection.print_one_line_atts">
+<span class="sig-name descname"><span class="pre">print_one_line_atts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/DatabaseConnection.html#DatabaseConnection.print_one_line_atts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.DatabaseConnection.DatabaseConnection.print_one_line_atts" title="Permalink to this definition"></a></dt>
+<dd><p>Prints off (or returns a string) with information about a class in one line
+Most child classes will redefine this method with custom attributes to print off</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.DatabaseConnection.DatabaseConnection.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/DatabaseConnection.html#DatabaseConnection.query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.DatabaseConnection.DatabaseConnection.query" title="Permalink to this definition"></a></dt>
+<dd><p>query the connection via the string or file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.DatabaseConnection.DatabaseConnection.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/DatabaseConnection.html#DatabaseConnection.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.DatabaseConnection.DatabaseConnection.write" title="Permalink to this definition"></a></dt>
+<dd><p>given the pandas DF, table_name, and other kwargs, write to database connection</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-database_connections.Query">
+<span id="database-connections-query-module"></span><h2>database_connections.Query module<a class="headerlink" href="#module-database_connections.Query" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database_connections.Query.Query">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database_connections.Query.</span></span><span class="sig-name descname"><span class="pre">Query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sqlite'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_Path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_Path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conn_inst</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">connection_module_params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Query.html#Query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Query.Query" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ParentClass</span></code></p>
+<p>A Python class for SQL Queries
+Query class is agnostic of engine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Query.Query.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Query.html#Query.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Query.Query.execute" title="Permalink to this definition"></a></dt>
+<dd><p>execute a command / statement</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Query.Query.export">
+<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Query.html#Query.export"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Query.Query.export" title="Permalink to this definition"></a></dt>
+<dd><p>export the df returned by the query to given export_Path</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Query.Query.get_unique_export_Path">
+<span class="sig-name descname"><span class="pre">get_unique_export_Path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Query.html#Query.get_unique_export_Path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Query.Query.get_unique_export_Path" title="Permalink to this definition"></a></dt>
+<dd><p>make sure the export Path is unique</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Query.Query.get_unique_query_Path">
+<span class="sig-name descname"><span class="pre">get_unique_query_Path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Query.html#Query.get_unique_query_Path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Query.Query.get_unique_query_Path" title="Permalink to this definition"></a></dt>
+<dd><p>make sure the query Path is unique</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Query.Query.print_imp_atts">
+<span class="sig-name descname"><span class="pre">print_imp_atts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">print_off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Query.html#Query.print_imp_atts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Query.Query.print_imp_atts" title="Permalink to this definition"></a></dt>
+<dd><p>Prints off (or returns a string) with the ‘important’ information about a class
+Most child classes will redefine this method with custom attributes to print off</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Query.Query.print_one_line_atts">
+<span class="sig-name descname"><span class="pre">print_one_line_atts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">print_off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leading_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'\t'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Query.html#Query.print_one_line_atts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Query.Query.print_one_line_atts" title="Permalink to this definition"></a></dt>
+<dd><p>Prints off (or returns a string) with information about a class in one line
+Most child classes will redefine this method with custom attributes to print off</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Query.Query.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">export</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Query.html#Query.query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Query.Query.query" title="Permalink to this definition"></a></dt>
+<dd><p>run the query using the module.query(), returns pandas DataFrame</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Query.Query.read_string_from_path">
+<span class="sig-name descname"><span class="pre">read_string_from_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Query.html#Query.read_string_from_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Query.Query.read_string_from_path" title="Permalink to this definition"></a></dt>
+<dd><p>read the contents of the filepath</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Query.Query.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Query.html#Query.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Query.Query.save" title="Permalink to this definition"></a></dt>
+<dd><p>using the query string, export to query_Path</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-database_connections.TJEncryptPassword">
+<span id="database-connections-tjencryptpassword-module"></span><h2>database_connections.TJEncryptPassword module<a class="headerlink" href="#module-database_connections.TJEncryptPassword" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.TJEncryptPassword.createEncryptedPasswordFile">
+<span class="sig-prename descclassname"><span class="pre">database_connections.TJEncryptPassword.</span></span><span class="sig-name descname"><span class="pre">createEncryptedPasswordFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sTransformation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sAlgorithm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sMode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sPadding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sMatch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abyKey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sMac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">abyMacKey</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sEncPassFileName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sPassword</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/TJEncryptPassword.html#createEncryptedPasswordFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.TJEncryptPassword.createEncryptedPasswordFile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.TJEncryptPassword.createPasswordEncryptionKeyFile">
+<span class="sig-prename descclassname"><span class="pre">database_connections.TJEncryptPassword.</span></span><span class="sig-name descname"><span class="pre">createPasswordEncryptionKeyFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sTransformation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sAlgorithm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sMode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sPadding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nKeySizeInBits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sMatch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sMac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sPassKeyFileName</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/TJEncryptPassword.html#createPasswordEncryptionKeyFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.TJEncryptPassword.createPasswordEncryptionKeyFile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.TJEncryptPassword.decryptPassword">
+<span class="sig-prename descclassname"><span class="pre">database_connections.TJEncryptPassword.</span></span><span class="sig-name descname"><span class="pre">decryptPassword</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sPassKeyFileName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sEncPassFileName</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/TJEncryptPassword.html#decryptPassword"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.TJEncryptPassword.decryptPassword" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.TJEncryptPassword.j2p">
+<span class="sig-prename descclassname"><span class="pre">database_connections.TJEncryptPassword.</span></span><span class="sig-name descname"><span class="pre">j2p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sName</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/TJEncryptPassword.html#j2p"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.TJEncryptPassword.j2p" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.TJEncryptPassword.loadPropertiesFile">
+<span class="sig-prename descclassname"><span class="pre">database_connections.TJEncryptPassword.</span></span><span class="sig-name descname"><span class="pre">loadPropertiesFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sFileName</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/TJEncryptPassword.html#loadPropertiesFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.TJEncryptPassword.loadPropertiesFile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-database_connections.password_encryption">
+<span id="database-connections-password-encryption-module"></span><h2>database_connections.password_encryption module<a class="headerlink" href="#module-database_connections.password_encryption" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.password_encryption.custom_decrypt">
+<span class="sig-prename descclassname"><span class="pre">database_connections.password_encryption.</span></span><span class="sig-name descname"><span class="pre">custom_decrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sPassKeyFileName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sEncPassFileName</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/password_encryption.html#custom_decrypt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.password_encryption.custom_decrypt" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.password_encryption.custom_encrypt">
+<span class="sig-prename descclassname"><span class="pre">database_connections.password_encryption.</span></span><span class="sig-name descname"><span class="pre">custom_encrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passkey_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encpass_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/password_encryption.html#custom_encrypt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.password_encryption.custom_encrypt" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-database_connections.sql_support_functions">
+<span id="database-connections-sql-support-functions-module"></span><h2>database_connections.sql_support_functions module<a class="headerlink" href="#module-database_connections.sql_support_functions" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.sql_support_functions.get_DatabaseConnection">
+<span class="sig-prename descclassname"><span class="pre">database_connections.sql_support_functions.</span></span><span class="sig-name descname"><span class="pre">get_DatabaseConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection_module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sqlite'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/sql_support_functions.html#get_DatabaseConnection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.sql_support_functions.get_DatabaseConnection" title="Permalink to this definition"></a></dt>
+<dd><p>returns a class object from the given SQL connection module</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.sql_support_functions.list_to_string">
+<span class="sig-prename descclassname"><span class="pre">database_connections.sql_support_functions.</span></span><span class="sig-name descname"><span class="pre">list_to_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quotes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&quot;'&quot;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/sql_support_functions.html#list_to_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.sql_support_functions.list_to_string" title="Permalink to this definition"></a></dt>
+<dd><p>Given a list [ ‘meter1’, ‘meter2’, ‘meter3’ ] spits out  ‘1234’,’2345’,’3456’</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.sql_support_functions.run_queries_in_folder">
+<span class="sig-prename descclassname"><span class="pre">database_connections.sql_support_functions.</span></span><span class="sig-name descname"><span class="pre">run_queries_in_folder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries_Dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_Dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conn_inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'csv'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parquet_engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fastparquet'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_endings</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['sql']</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/sql_support_functions.html#run_queries_in_folder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.sql_support_functions.run_queries_in_folder" title="Permalink to this definition"></a></dt>
+<dd><p>Given a Dir of Queries, an Export Dir, and a database connection, run all queries as specified by the user</p>
+</dd></dl>
+
+</section>
+<section id="module-database_connections">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-database_connections" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="database_connections.Connections.html" class="btn btn-neutral float-right" title="database_connections.Connections package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Kabbes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

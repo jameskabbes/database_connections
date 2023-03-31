@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>database_connections.Connections.oracle &mdash; kabbes_database_connections 0.7.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            kabbes_database_connections
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">src</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">kabbes_database_connections</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">database_connections.Connections.oracle</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for database_connections.Connections.oracle</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">cx_Oracle</span>
+<span class="kn">from</span> <span class="nn">database_connections</span> <span class="kn">import</span> <span class="n">password_encryption</span>
+<span class="kn">from</span> <span class="nn">database_connections.DatabaseConnection</span> <span class="kn">import</span> <span class="n">DatabaseConnection</span>
+
+<div class="viewcode-block" id="get_DatabaseConnection"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.oracle.get_DatabaseConnection">[docs]</a><span class="k">def</span> <span class="nf">get_DatabaseConnection</span><span class="p">(</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;returns the class instance of the said object&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">Oracle</span><span class="p">(</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Oracle"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.oracle.Oracle">[docs]</a><span class="k">class</span> <span class="nc">Oracle</span><span class="p">(</span> <span class="n">DatabaseConnection</span> <span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;To run the Oracle module, you need to set the following attributes:</span>
+
+<span class="sd">    dsn </span>
+<span class="sd">    username </span>
+<span class="sd">    passkey_path</span>
+<span class="sd">    encpass_path</span>
+
+<span class="sd">    or</span>
+
+<span class="sd">    host </span>
+<span class="sd">    port </span>
+<span class="sd">    sid  </span>
+<span class="sd">    username </span>
+<span class="sd">    passkey_path</span>
+<span class="sd">    encpass_path</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">):</span>
+
+        <span class="n">DatabaseConnection</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Oracle.init"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.oracle.Oracle.init">[docs]</a>    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_atts</span><span class="p">(</span> <span class="n">kwargs</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_password</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_dsn</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_conn</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_cursor</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print_atts</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Oracle.get_password"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.oracle.Oracle.get_password">[docs]</a>    <span class="k">def</span> <span class="nf">get_password</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;get password by custom decrypting &#39;&#39;&#39;</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_attr</span><span class="p">(</span> <span class="s1">&#39;password&#39;</span> <span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">password_encryption</span><span class="o">.</span><span class="n">custom_decrypt</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">passkey_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">encpass_path</span> <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Oracle.get_conn"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.oracle.Oracle.get_conn">[docs]</a>    <span class="k">def</span> <span class="nf">get_conn</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;get the connection to cx_Oracle&#39;&#39;&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">conn</span> <span class="o">=</span> <span class="n">cx_Oracle</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span> <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">,</span> <span class="n">dsn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dsn</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">)</span></div>
+        <span class="c1">#(user=None, password=None, dsn=None, mode=None, handle=None, pool=None, threaded=False, events=False, cclass=None, purity=None, newpassword=None, encoding=None, nencoding=None, edition=None, appcontext=[], tag=None, matchanytag=None, shardingkey=[], supershardingkey=[])</span>
+
+<div class="viewcode-block" id="Oracle.get_dsn"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.oracle.Oracle.get_dsn">[docs]</a>    <span class="k">def</span> <span class="nf">get_dsn</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;make a dsn connection if one doesnt exist&#39;&#39;&#39;</span>
+
+        <span class="k">if</span> <span class="s1">&#39;dsn&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+            <span class="n">possible_kwargs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sid&#39;</span><span class="p">,</span><span class="s1">&#39;service_name&#39;</span><span class="p">,</span><span class="s1">&#39;region&#39;</span><span class="p">,</span><span class="s1">&#39;sharding_key&#39;</span><span class="p">,</span><span class="s1">&#39;super_sharding_key&#39;</span><span class="p">]</span>
+            <span class="n">dsn_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">att</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">att</span> <span class="ow">in</span> <span class="n">possible_kwargs</span><span class="p">:</span>
+                    <span class="n">dsn_kwargs</span><span class="p">[</span><span class="n">att</span><span class="p">]</span> <span class="o">=</span> <span class="nb">vars</span><span class="p">(</span><span class="bp">self</span><span class="p">)[</span><span class="n">att</span><span class="p">]</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">dsn</span> <span class="o">=</span> <span class="n">cx_Oracle</span><span class="o">.</span><span class="n">makedsn</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">,</span> <span class="o">**</span><span class="n">dsn_kwargs</span> <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Oracle.get_all_tables"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.oracle.Oracle.get_all_tables">[docs]</a>    <span class="k">def</span> <span class="nf">get_all_tables</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;returns a list of all available table names&#39;&#39;&#39;</span>
+
+        <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;select * from all_tables&quot;&quot;&quot;</span>
+
+        <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">(</span> <span class="n">query_string</span> <span class="o">=</span> <span class="n">string</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;TABLE_NAME&#39;</span><span class="p">]</span> <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Oracle.create_generic_select"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.oracle.Oracle.create_generic_select">[docs]</a>    <span class="k">def</span> <span class="nf">create_generic_select</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;returns a string with a generic select&#39;&#39;&#39;</span>
+
+        <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;SELECT * FROM &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">table_name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">top</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="s1">&#39;WHERE ROWNUM &lt;= &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">top</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">string</span></div></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Kabbes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

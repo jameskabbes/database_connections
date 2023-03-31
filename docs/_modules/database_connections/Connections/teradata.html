@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>database_connections.Connections.teradata &mdash; kabbes_database_connections 0.7.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            kabbes_database_connections
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">src</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">kabbes_database_connections</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">database_connections.Connections.teradata</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for database_connections.Connections.teradata</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">teradatasql</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">py_starter.py_starter</span> <span class="k">as</span> <span class="nn">ps</span>
+
+<span class="kn">from</span> <span class="nn">database_connections.DatabaseConnection</span> <span class="kn">import</span> <span class="n">DatabaseConnection</span>
+
+<div class="viewcode-block" id="get_DatabaseConnection"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.teradata.get_DatabaseConnection">[docs]</a><span class="k">def</span> <span class="nf">get_DatabaseConnection</span><span class="p">(</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;returns the class instance of the said object&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="n">Teradata</span><span class="p">(</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Teradata"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.teradata.Teradata">[docs]</a><span class="k">class</span> <span class="nc">Teradata</span><span class="p">(</span> <span class="n">DatabaseConnection</span> <span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;To run the teradata module, you need to set the following attributes:</span>
+
+<span class="sd">    host        = </span>
+<span class="sd">    username    = </span>
+<span class="sd">    passkey_path= &#39;PassKey.properties&#39;</span>
+<span class="sd">    encpass_path= &#39;EncPass.properties&#39;</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+        <span class="n">DatabaseConnection</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Teradata.init"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.teradata.Teradata.init">[docs]</a>    <span class="k">def</span> <span class="nf">init</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_atts</span><span class="p">(</span> <span class="n">kwargs</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_password</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_conn</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print_atts</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Teradata.get_conn"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.teradata.Teradata.get_conn">[docs]</a>    <span class="k">def</span> <span class="nf">get_conn</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span> <span class="p">):</span>
+
+        <span class="n">default_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;logmech&#39;</span> <span class="p">:</span> <span class="s1">&#39;LDAP&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;log&#39;</span> <span class="p">:</span> <span class="mi">8</span>
+        <span class="p">}</span>
+        <span class="n">joined_kwargs</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">merge_dicts</span><span class="p">(</span> <span class="n">default_kwargs</span><span class="p">,</span> <span class="n">kwargs</span> <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">conn</span> <span class="o">=</span> <span class="n">teradatasql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span> <span class="n">host</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sPassword</span><span class="p">,</span> <span class="o">**</span><span class="n">joined_kwargs</span> <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Teradata.get_password"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.teradata.Teradata.get_password">[docs]</a>    <span class="k">def</span> <span class="nf">get_password</span><span class="p">(</span> <span class="bp">self</span> <span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">sPassword</span> <span class="o">=</span> <span class="s2">&quot;ENCRYPTED_PASSWORD(file:</span><span class="si">{}</span><span class="s2">,file:</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">passkey_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">encpass_path</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Teradata.query"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.teradata.Teradata.query">[docs]</a>    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">query_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">query_file</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Teradata has special query method, so this class overwrites the parent class&#39;s method&#39;&#39;&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">get_cursor</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span> <span class="p">(</span><span class="s1">&#39;{fn teradata_nativesql}Driver version {fn teradata_driver_version}  Database version {fn teradata_database_version}&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">query_file</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">query_string</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+            <span class="n">query_string</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="n">read_text_file</span><span class="p">(</span> <span class="n">query_file</span> <span class="p">)</span>
+
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">query_string</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">conn</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span></div>
+
+<div class="viewcode-block" id="Teradata.create_generic_select"><a class="viewcode-back" href="../../../database_connections.Connections.html#database_connections.Connections.teradata.Teradata.create_generic_select">[docs]</a>    <span class="k">def</span> <span class="nf">create_generic_select</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="kc">None</span> <span class="p">):</span>
+
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;returns a string with a generic select&#39;&#39;&#39;</span>
+
+        <span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;SELECT &#39;</span>
+
+        <span class="k">if</span> <span class="n">top</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39; TOP &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">top</span><span class="p">)</span> <span class="p">)</span>
+
+        <span class="n">string</span> <span class="o">+=</span> <span class="s1">&#39; * FROM &#39;</span> <span class="o">+</span> <span class="n">table_name</span>
+        <span class="k">return</span> <span class="n">string</span></div></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Kabbes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

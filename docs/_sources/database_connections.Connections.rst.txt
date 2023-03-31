@@ -1,0 +1,61 @@
+database\_connections.Connections package
+=========================================
+
+Submodules
+----------
+
+database\_connections.Connections.athena module
+-----------------------------------------------
+
+.. automodule:: database_connections.Connections.athena
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+database\_connections.Connections.databricks module
+---------------------------------------------------
+
+.. automodule:: database_connections.Connections.databricks
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+database\_connections.Connections.oracle module
+-----------------------------------------------
+
+.. automodule:: database_connections.Connections.oracle
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+database\_connections.Connections.redshift module
+-------------------------------------------------
+
+.. automodule:: database_connections.Connections.redshift
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+database\_connections.Connections.sqlite module
+-----------------------------------------------
+
+.. automodule:: database_connections.Connections.sqlite
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+database\_connections.Connections.teradata module
+-------------------------------------------------
+
+.. automodule:: database_connections.Connections.teradata
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: database_connections.Connections
+   :members:
+   :undoc-members:
+   :show-inheritance:

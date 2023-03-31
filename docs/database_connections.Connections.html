@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>database_connections.Connections package &mdash; kabbes_database_connections 0.7.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="database_connections package" href="database_connections.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            kabbes_database_connections
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="database_connections.html">database_connections package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="database_connections.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">database_connections.Connections package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.html#module-database_connections.DatabaseConnection">database_connections.DatabaseConnection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.html#module-database_connections.Query">database_connections.Query module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.html#module-database_connections.TJEncryptPassword">database_connections.TJEncryptPassword module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.html#module-database_connections.password_encryption">database_connections.password_encryption module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.html#module-database_connections.sql_support_functions">database_connections.sql_support_functions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_connections.html#module-database_connections">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">kabbes_database_connections</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+          <li class="breadcrumb-item"><a href="database_connections.html">database_connections package</a></li>
+      <li class="breadcrumb-item active">database_connections.Connections package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/database_connections.Connections.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="database-connections-connections-package">
+<h1>database_connections.Connections package<a class="headerlink" href="#database-connections-connections-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-database_connections.Connections.athena">
+<span id="database-connections-connections-athena-module"></span><h2>database_connections.Connections.athena module<a class="headerlink" href="#module-database_connections.Connections.athena" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database_connections.Connections.athena.Athena">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database_connections.Connections.athena.</span></span><span class="sig-name descname"><span class="pre">Athena</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/athena.html#Athena"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.athena.Athena" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="database_connections.html#database_connections.DatabaseConnection.DatabaseConnection" title="database_connections.DatabaseConnection.DatabaseConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseConnection</span></code></a></p>
+<p>Need the following attributes to be stored:
+aws_conn_params = { ‘aws_access_key_id’     : ‘XXXXXX’,</p>
+<blockquote>
+<div><p>‘aws_secret_access_key’ : ‘XXXXXX’,
+‘aws_session_token’     : ‘XXXXXX’,
+‘N # of other params’   : ‘XXXXXX’,
+‘region_name’           : ‘us-east-1’,
+‘work_group’            : 
+‘s3_staging_dir’        : 
+}</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.athena.Athena.get_conn">
+<span class="sig-name descname"><span class="pre">get_conn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/athena.html#Athena.get_conn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.athena.Athena.get_conn" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.athena.Athena.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/athena.html#Athena.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.athena.Athena.write" title="Permalink to this definition"></a></dt>
+<dd><p>given the pandas DF, table_name, and other kwargs, write to database connection</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.Connections.athena.get_DatabaseConnection">
+<span class="sig-prename descclassname"><span class="pre">database_connections.Connections.athena.</span></span><span class="sig-name descname"><span class="pre">get_DatabaseConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/athena.html#get_DatabaseConnection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.athena.get_DatabaseConnection" title="Permalink to this definition"></a></dt>
+<dd><p>returns the class instance of the said object</p>
+</dd></dl>
+
+</section>
+<section id="module-database_connections.Connections.databricks">
+<span id="database-connections-connections-databricks-module"></span><h2>database_connections.Connections.databricks module<a class="headerlink" href="#module-database_connections.Connections.databricks" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database_connections.Connections.databricks.Databricks">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database_connections.Connections.databricks.</span></span><span class="sig-name descname"><span class="pre">Databricks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/databricks.html#Databricks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.databricks.Databricks" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="database_connections.html#database_connections.DatabaseConnection.DatabaseConnection" title="database_connections.DatabaseConnection.DatabaseConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseConnection</span></code></a></p>
+<p>To run the Databricks module, you need to set the following attributes:</p>
+<p>server_hostname
+http_path
+access_token</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.databricks.Databricks.get_conn">
+<span class="sig-name descname"><span class="pre">get_conn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/databricks.html#Databricks.get_conn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.databricks.Databricks.get_conn" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.databricks.Databricks.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/databricks.html#Databricks.init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.databricks.Databricks.init" title="Permalink to this definition"></a></dt>
+<dd><p>sets attributes, gets connection, and prints attributes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.Connections.databricks.get_DatabaseConnection">
+<span class="sig-prename descclassname"><span class="pre">database_connections.Connections.databricks.</span></span><span class="sig-name descname"><span class="pre">get_DatabaseConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/databricks.html#get_DatabaseConnection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.databricks.get_DatabaseConnection" title="Permalink to this definition"></a></dt>
+<dd><p>returns the class instance of the said object</p>
+</dd></dl>
+
+</section>
+<section id="module-database_connections.Connections.oracle">
+<span id="database-connections-connections-oracle-module"></span><h2>database_connections.Connections.oracle module<a class="headerlink" href="#module-database_connections.Connections.oracle" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database_connections.Connections.oracle.Oracle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database_connections.Connections.oracle.</span></span><span class="sig-name descname"><span class="pre">Oracle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/oracle.html#Oracle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.oracle.Oracle" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="database_connections.html#database_connections.DatabaseConnection.DatabaseConnection" title="database_connections.DatabaseConnection.DatabaseConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseConnection</span></code></a></p>
+<p>To run the Oracle module, you need to set the following attributes:</p>
+<p>dsn 
+username 
+passkey_path
+encpass_path</p>
+<p>or</p>
+<p>host 
+port 
+sid  
+username 
+passkey_path
+encpass_path</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.oracle.Oracle.create_generic_select">
+<span class="sig-name descname"><span class="pre">create_generic_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/oracle.html#Oracle.create_generic_select"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.oracle.Oracle.create_generic_select" title="Permalink to this definition"></a></dt>
+<dd><p>returns a string with a generic select</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.oracle.Oracle.get_all_tables">
+<span class="sig-name descname"><span class="pre">get_all_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/oracle.html#Oracle.get_all_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.oracle.Oracle.get_all_tables" title="Permalink to this definition"></a></dt>
+<dd><p>returns a list of all available table names</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.oracle.Oracle.get_conn">
+<span class="sig-name descname"><span class="pre">get_conn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/oracle.html#Oracle.get_conn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.oracle.Oracle.get_conn" title="Permalink to this definition"></a></dt>
+<dd><p>get the connection to cx_Oracle</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.oracle.Oracle.get_dsn">
+<span class="sig-name descname"><span class="pre">get_dsn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/oracle.html#Oracle.get_dsn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.oracle.Oracle.get_dsn" title="Permalink to this definition"></a></dt>
+<dd><p>make a dsn connection if one doesnt exist</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.oracle.Oracle.get_password">
+<span class="sig-name descname"><span class="pre">get_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/oracle.html#Oracle.get_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.oracle.Oracle.get_password" title="Permalink to this definition"></a></dt>
+<dd><p>get password by custom decrypting</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.oracle.Oracle.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/oracle.html#Oracle.init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.oracle.Oracle.init" title="Permalink to this definition"></a></dt>
+<dd><p>sets attributes, gets connection, and prints attributes</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.Connections.oracle.get_DatabaseConnection">
+<span class="sig-prename descclassname"><span class="pre">database_connections.Connections.oracle.</span></span><span class="sig-name descname"><span class="pre">get_DatabaseConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/oracle.html#get_DatabaseConnection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.oracle.get_DatabaseConnection" title="Permalink to this definition"></a></dt>
+<dd><p>returns the class instance of the said object</p>
+</dd></dl>
+
+</section>
+<section id="module-database_connections.Connections.redshift">
+<span id="database-connections-connections-redshift-module"></span><h2>database_connections.Connections.redshift module<a class="headerlink" href="#module-database_connections.Connections.redshift" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database_connections.Connections.redshift.Redshift">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database_connections.Connections.redshift.</span></span><span class="sig-name descname"><span class="pre">Redshift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/redshift.html#Redshift"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.redshift.Redshift" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="database_connections.html#database_connections.DatabaseConnection.DatabaseConnection" title="database_connections.DatabaseConnection.DatabaseConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseConnection</span></code></a></p>
+<p>To run the SQLite module, you need to set the following attributes:</p>
+<p>engine = ‘engine code’
+schema = ‘dfg_analytics’</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.redshift.Redshift.create_generic_select">
+<span class="sig-name descname"><span class="pre">create_generic_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/redshift.html#Redshift.create_generic_select"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.redshift.Redshift.create_generic_select" title="Permalink to this definition"></a></dt>
+<dd><p>returns a string with a generic select</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.redshift.Redshift.get_all_tables">
+<span class="sig-name descname"><span class="pre">get_all_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/redshift.html#Redshift.get_all_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.redshift.Redshift.get_all_tables" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.redshift.Redshift.get_conn">
+<span class="sig-name descname"><span class="pre">get_conn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/redshift.html#Redshift.get_conn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.redshift.Redshift.get_conn" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.redshift.Redshift.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/redshift.html#Redshift.init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.redshift.Redshift.init" title="Permalink to this definition"></a></dt>
+<dd><p>sets attributes, gets connection, and prints attributes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.redshift.Redshift.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/redshift.html#Redshift.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.redshift.Redshift.write" title="Permalink to this definition"></a></dt>
+<dd><p>given the pandas DF, table_name, and other kwargs, write to database connection</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.Connections.redshift.get_DatabaseConnection">
+<span class="sig-prename descclassname"><span class="pre">database_connections.Connections.redshift.</span></span><span class="sig-name descname"><span class="pre">get_DatabaseConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/redshift.html#get_DatabaseConnection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.redshift.get_DatabaseConnection" title="Permalink to this definition"></a></dt>
+<dd><p>returns the class instance of the said object</p>
+</dd></dl>
+
+</section>
+<section id="module-database_connections.Connections.sqlite">
+<span id="database-connections-connections-sqlite-module"></span><h2>database_connections.Connections.sqlite module<a class="headerlink" href="#module-database_connections.Connections.sqlite" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database_connections.Connections.sqlite.SQLite">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database_connections.Connections.sqlite.</span></span><span class="sig-name descname"><span class="pre">SQLite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/sqlite.html#SQLite"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.sqlite.SQLite" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="database_connections.html#database_connections.DatabaseConnection.DatabaseConnection" title="database_connections.DatabaseConnection.DatabaseConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseConnection</span></code></a></p>
+<p>To run the SQLite module, you need to set the following attributes:</p>
+<p>db_path = ‘/path/to/database.db’</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.sqlite.SQLite.close_conn">
+<span class="sig-name descname"><span class="pre">close_conn</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/sqlite.html#SQLite.close_conn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.sqlite.SQLite.close_conn" title="Permalink to this definition"></a></dt>
+<dd><p>close the connection</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.sqlite.SQLite.create_generic_select">
+<span class="sig-name descname"><span class="pre">create_generic_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/sqlite.html#SQLite.create_generic_select"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.sqlite.SQLite.create_generic_select" title="Permalink to this definition"></a></dt>
+<dd><p>returns a string with a generic select statement</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.sqlite.SQLite.exit">
+<span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/sqlite.html#SQLite.exit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.sqlite.SQLite.exit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.sqlite.SQLite.get_all_tables">
+<span class="sig-name descname"><span class="pre">get_all_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/sqlite.html#SQLite.get_all_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.sqlite.SQLite.get_all_tables" title="Permalink to this definition"></a></dt>
+<dd><p>returns a list of all available table names</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.sqlite.SQLite.get_conn">
+<span class="sig-name descname"><span class="pre">get_conn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/sqlite.html#SQLite.get_conn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.sqlite.SQLite.get_conn" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.Connections.sqlite.get_DatabaseConnection">
+<span class="sig-prename descclassname"><span class="pre">database_connections.Connections.sqlite.</span></span><span class="sig-name descname"><span class="pre">get_DatabaseConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/sqlite.html#get_DatabaseConnection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.sqlite.get_DatabaseConnection" title="Permalink to this definition"></a></dt>
+<dd><p>returns the class instance of the said object</p>
+</dd></dl>
+
+</section>
+<section id="module-database_connections.Connections.teradata">
+<span id="database-connections-connections-teradata-module"></span><h2>database_connections.Connections.teradata module<a class="headerlink" href="#module-database_connections.Connections.teradata" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="database_connections.Connections.teradata.Teradata">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">database_connections.Connections.teradata.</span></span><span class="sig-name descname"><span class="pre">Teradata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/teradata.html#Teradata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.teradata.Teradata" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="database_connections.html#database_connections.DatabaseConnection.DatabaseConnection" title="database_connections.DatabaseConnection.DatabaseConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">DatabaseConnection</span></code></a></p>
+<p>To run the teradata module, you need to set the following attributes:</p>
+<p>host        = 
+username    = 
+passkey_path= ‘PassKey.properties’
+encpass_path= ‘EncPass.properties’</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.teradata.Teradata.create_generic_select">
+<span class="sig-name descname"><span class="pre">create_generic_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/teradata.html#Teradata.create_generic_select"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.teradata.Teradata.create_generic_select" title="Permalink to this definition"></a></dt>
+<dd><p>returns a string with a generic select</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.teradata.Teradata.get_conn">
+<span class="sig-name descname"><span class="pre">get_conn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/teradata.html#Teradata.get_conn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.teradata.Teradata.get_conn" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.teradata.Teradata.get_password">
+<span class="sig-name descname"><span class="pre">get_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/teradata.html#Teradata.get_password"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.teradata.Teradata.get_password" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.teradata.Teradata.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/teradata.html#Teradata.init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.teradata.Teradata.init" title="Permalink to this definition"></a></dt>
+<dd><p>sets attributes, gets connection, and prints attributes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="database_connections.Connections.teradata.Teradata.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/teradata.html#Teradata.query"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.teradata.Teradata.query" title="Permalink to this definition"></a></dt>
+<dd><p>Teradata has special query method, so this class overwrites the parent class’s method</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="database_connections.Connections.teradata.get_DatabaseConnection">
+<span class="sig-prename descclassname"><span class="pre">database_connections.Connections.teradata.</span></span><span class="sig-name descname"><span class="pre">get_DatabaseConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/database_connections/Connections/teradata.html#get_DatabaseConnection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#database_connections.Connections.teradata.get_DatabaseConnection" title="Permalink to this definition"></a></dt>
+<dd><p>returns the class instance of the said object</p>
+</dd></dl>
+
+</section>
+<section id="module-database_connections.Connections">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-database_connections.Connections" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="database_connections.html" class="btn btn-neutral float-left" title="database_connections package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, James Kabbes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

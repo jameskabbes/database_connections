@@ -1,0 +1,61 @@
+database\_connections package
+=============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   database_connections.Connections
+
+Submodules
+----------
+
+database\_connections.DatabaseConnection module
+-----------------------------------------------
+
+.. automodule:: database_connections.DatabaseConnection
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+database\_connections.Query module
+----------------------------------
+
+.. automodule:: database_connections.Query
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+database\_connections.TJEncryptPassword module
+----------------------------------------------
+
+.. automodule:: database_connections.TJEncryptPassword
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+database\_connections.password\_encryption module
+-------------------------------------------------
+
+.. automodule:: database_connections.password_encryption
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+database\_connections.sql\_support\_functions module
+----------------------------------------------------
+
+.. automodule:: database_connections.sql_support_functions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: database_connections
+   :members:
+   :undoc-members:
+   :show-inheritance:
